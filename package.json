@@ -1,0 +1,26 @@
+{
+  "name": "poke-idea-maker",
+  "version": "1.0.0",
+  "description": "I'll put the info for the trello and live site link eventually",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpace522/poke-idea-maker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bpace522/poke-idea-maker/issues"
+  },
+  "homepage": "https://github.com/bpace522/poke-idea-maker#readme",
+  "dependencies": {
+    "vite": "^7.2.4"
+  }
+}

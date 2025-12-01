@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/bpace522/poke-idea-maker#readme",
   "dependencies": {
-    "vite": "^7.2.4"
+    "vite": "^7.2.6"
   }
 }

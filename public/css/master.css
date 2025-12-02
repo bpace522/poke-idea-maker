@@ -2,6 +2,7 @@ body {
     background: url("../images/pokemon-bg.jpg") no-repeat;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
 }
 
 #content-box {
@@ -14,6 +15,57 @@ body {
     display: flex;
     background: url("../images/pokeball.jpg") no-repeat;
     background-size: cover;
+}
+
+.landing-hero-image {
+    background-image: url("../images/ORAS_Route_101.jpg");
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no=repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: 100px;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 400px;
+    padding: 40px;
+    margin: 0 auto;
+}
+
+.pokemon-card {
+    height: 400px;
+    width: 400px;
+    border: 10px solid lightgray;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 60px;
+    background: url("../images/pokeball.jpg") no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.20);
+}
+
+#pokemonB {
+    margin-top: 300px;
+}
+
+.pokemon-description {
+    width: 230px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 2px;
+    font-size: 18px;
+    overflow-y: auto;
 }
 
 #pokemon-info {
@@ -158,4 +210,16 @@ body {
     padding: 2px;
     font-size: 18px;
     overflow-y: auto;
+}
+
+@media (max-width: 800px) {
+    .pokemon-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pokemon-card {
+        max-width: 400px;
+        width: 100%;
+    }
 }

@@ -1,8 +1,29 @@
+import { loadHeaderFooter } from "./utils.mjs";
+
+loadHeaderFooter();
 
 const pokemonCount = 151;
 var pokedex = {}; // {1 : {"name" : "bulbasaur", "img" : url, "type" : ["grass", "poison"], "desc" : "..."}}
 
+function addToTeam(pokemonId) {
+    let team = JSON.parse(localStorage.getItem("team")) || [];
+
+    if (team.length >= 6) {
+        alert("Your team already has 6 Pokémon!");
+        return;
+    }
+
+    team.push(pokemonId);  // allow duplicates
+    localStorage.setItem("team", JSON.stringify(team));
+    alert("Pokémon added to your team!");
+}
+
 window.onload = async function() {
+
+    let focusPokemon = this.localStorage.getItem("viewPokemon");
+    if (focusPokemon) {
+        focusPokemon = parseInt(focusPokemon);
+    }
     // getPokemon(1);
     for (let i = 1; i <= pokemonCount; i++) {
         await getPokemon(i);
@@ -15,7 +36,8 @@ window.onload = async function() {
         this.document.getElementById("pokemon-list").append(pokemon);
     }
 
-    document.getElementById("pokemon-description").innerText = pokedex[1]["desc"];
+    let firstToShow = focusPokemon || 1;
+    updatePokemon.call({ id: firstToShow});
 
     console.log(pokedex);
 }
@@ -60,4 +82,6 @@ function updatePokemon() {
 
     //update description
     document.getElementById("pokemon-description").innerText = pokedex[this.id]["desc"];
+
+    document.querySelector(`.addToTeam`).onclick = () => addToTeam(this.id);
 }

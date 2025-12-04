@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/master.css">
+    <script src="../js/landing.js" defer></script>
 </head>
 <body>
     <header>
@@ -12,8 +13,24 @@
     </header>
     <main>
         <div class="landing-hero-image">
-            <div class="left_pokemon"></div>
-            <div class="right_pokemon"></div>
+            <div id="pokemonA" class="pokemon-card">
+                <img class="pokemon-img" src="">
+                <h2 class="pokemon-name"></h2>
+                <div class="pokemon-types"></div>
+                <p class="pokemon-description"></p>
+                <button id="addToTeam">Add to TEAM?</button>
+                <button id="pokedexView">See in POKeDEX?</button>
+            </div>
+
+            <div id="pokemonB" class="pokemon-card">
+                <img class="pokemon-img" src="">
+                <h2 class="pokemon-name"></h2>
+                <div class="pokemon-types"></div>
+                <p class="pokemon-description"></p>
+                <button id="addToTeam">Add to TEAM?</button>
+                <button id="pokedexView">See in POKeDEX?</button>
+            </div>
+        </div>
             <a href="/pokedex/index.html">
                 <button>Click to go to pokedex</button>
             </a>

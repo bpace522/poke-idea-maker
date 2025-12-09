@@ -2,7 +2,9 @@ body {
     background: url("../images/pokemon-bg.jpg") no-repeat;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
-    height: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 
 #content-box {
@@ -24,7 +26,6 @@ body {
     background-repeat: no=repeat;
     background-size: cover;
     position: relative;
-    margin-top: 100px;
     max-width: 1100px;
     display: flex;
     justify-content: space-between;
@@ -222,4 +223,85 @@ body {
         max-width: 400px;
         width: 100%;
     }
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.ability-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.stats-box p {
+    background: rgba(255,255,255,0.7);
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.pokemon-card h3 {
+    margin-top: 15px;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+
+    border-bottom: 2px solid #ccc;
+}
+
+.site-header {
+    width: 100%;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.main-nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    padding: 6px 12px;
+    color: black;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    background: #e8e8e8;
+    transform: translateY(-2px);
+}
+
+#main-footer {
+    text-align: center;
 }

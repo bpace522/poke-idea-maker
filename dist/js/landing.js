@@ -1,6 +1,9 @@
 // The next thing I need to do is make it so I can add the pokemon to a team or make it so I can view the pokemon in the pokedex. 
 // Make the pokemon team page using local storage and show extra details for each of the 6 pokemon. Make it so the view in pokedex button
 // actually takes you to the pokedex page and displays the pokemon from landing and not bulbasaur. 
+import { loadHeaderFooter } from "./utils.mjs";
+
+loadHeaderFooter();
 
 const pokemonCount = 151;
 var pokedex = {}; // same structure you're already using
@@ -18,14 +21,11 @@ function addToTeam(pokemonId) {
         return;
     }
 
-    if (!team.includes(pokemonId)) {
-        team.push(pokemonId);
-        localStorage.setItem("team", JSON.stringify(team));
-        alert("Pokémon added to your team!");
-    } else {
-        alert("That Pokémon is already on your team!");
-    }
+    team.push(pokemonId);  // allow duplicates
+    localStorage.setItem("team", JSON.stringify(team));
+    alert("Pokémon added to your team!");
 }
+
 
 window.onload = async function () {
     // Pick 2 random Pokémon numbers
@@ -91,14 +91,10 @@ function displayPokemon(sectionId, id) {
     document.querySelector(`#${sectionId} .pokemon-description`).innerText =
         pokedex[id].desc;
 
-    document
-    .querySelector(`#${sectionId} .addToTeam`)
-    .onclick = () => addToTeam(id);
+    document.querySelector(`#${sectionId} .addToTeam`).onclick = () => addToTeam(id);
 
-    document
-        .querySelector(`#${sectionId} .pokedexView`)
-        .onclick = () => {
-            localStorage.setItem("viewPokemon", id);
-            window.location.href = "/pokedex/index.html";
+    document.querySelector(`#${sectionId} .pokedexView`).onclick = () => {
+        localStorage.setItem("viewPokemon", id);
+        window.location.href = "/pokedex/index.html";
         };
 }

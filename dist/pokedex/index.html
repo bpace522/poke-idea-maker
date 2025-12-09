@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex Page</title>
-    <script src="/js/pokedex.js" defer></script>
+    <script type="module" src="/js/pokedex.js" defer></script>
     <link rel="stylesheet" href="/css/master.css">
 </head>
+<header class="divider" id="main-header"></header>
 <body>
     <div id="content-box">
         <div id="pokemon-info">
@@ -15,8 +16,10 @@
                 <span class="type-box grass">GRASS</span><span class="type-box poison">POISON</span>
             </div>
             <div id="pokemon-description"></div>
+            <button class="addToTeam">Add to TEAM?</button>
         </div>
         <div id="pokemon-list"></div>
     </div>
 </body>
+<footer id="main-footer"></footer>
 </html>

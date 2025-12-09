@@ -5,7 +5,7 @@ import { loadHeaderFooter } from "./utils.mjs";
 
 loadHeaderFooter();
 
-const pokemonCount = 151;
+const pokemonCount = 1029;
 var pokedex = {}; // same structure you're already using
 
 // Generate an integer between min and max (inclusive)

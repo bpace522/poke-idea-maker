@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/master.css">
-    <script src="../js/landing.js" defer></script>
+    <script type="module" src="/js/landing.js" defer></script>
+  <script type="module" crossorigin src="/assets/index-B5Qt9EMX.js"></script>
 </head>
 <body>
-    <header>
+    <header class="divider" id="main-header"></header>
 
-    </header>
     <main>
         <div class="landing-hero-image">
             <div id="pokemonA" class="pokemon-card">
@@ -18,8 +18,8 @@
                 <h2 class="pokemon-name"></h2>
                 <div class="pokemon-types"></div>
                 <p class="pokemon-description"></p>
-                <button id="addToTeam">Add to TEAM?</button>
-                <button id="pokedexView">See in POKeDEX?</button>
+                <button class="addToTeam">Add to TEAM?</button>
+                <button class="pokedexView">See in POKeDEX?</button>
             </div>
 
             <div id="pokemonB" class="pokemon-card">
@@ -27,17 +27,18 @@
                 <h2 class="pokemon-name"></h2>
                 <div class="pokemon-types"></div>
                 <p class="pokemon-description"></p>
-                <button id="addToTeam">Add to TEAM?</button>
-                <button id="pokedexView">See in POKeDEX?</button>
+                <button class="addToTeam">Add to TEAM?</button>
+                <button class="pokedexView">See in POKeDEX?</button>
             </div>
         </div>
             <a href="/pokedex/index.html">
                 <button>Click to go to pokedex</button>
             </a>
-        </div>
+            <a href="/team/index.html">
+                <button>View Your Team</button>
+            </a>
     </main>
-    <footer>
 
-    </footer>
+    <footer id="main-footer"></footer>
 </body>
 </html>

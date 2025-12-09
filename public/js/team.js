@@ -23,7 +23,6 @@ async function loadPokemon(id) {
     const res = await fetch(url);
     const data = await res.json();
 
-    // Species data (for description)
     const speciesRes = await fetch(data.species.url);
     const species = await speciesRes.json();
     const desc = species.flavor_text_entries.find(
@@ -83,7 +82,6 @@ function displayPokemonCard(p) {
         <button class="remove-btn">Remove Pokémon</button>
     `;
 
-    // Remove button
     card.querySelector(".remove-btn").addEventListener("click", () => {
         removeFromTeam(p.id);
         card.remove();

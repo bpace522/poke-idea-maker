@@ -5,10 +5,9 @@ import { loadHeaderFooter } from "./utils.mjs";
 
 loadHeaderFooter();
 
-const pokemonCount = 1029;
-var pokedex = {}; // same structure you're already using
+const pokemonCount = 151;
+var pokedex = {};
 
-// Generate an integer between min and max (inclusive)
 function getRandomNum(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -21,22 +20,19 @@ function addToTeam(pokemonId) {
         return;
     }
 
-    team.push(pokemonId);  // allow duplicates
+    team.push(pokemonId);
     localStorage.setItem("team", JSON.stringify(team));
     alert("Pokémon added to your team!");
 }
 
 
 window.onload = async function () {
-    // Pick 2 random Pokémon numbers
     let random1 = getRandomNum(1, pokemonCount);
     let random2 = getRandomNum(1, pokemonCount);
 
-    // Fetch both Pokémon
     await getPokemon(random1);
     await getPokemon(random2);
 
-    // Display them
     displayPokemon("pokemonA", random1);
     displayPokemon("pokemonB", random2);
 };
@@ -51,7 +47,6 @@ async function getPokemon(num) {
     let types = pokemon["types"];
     let img = pokemon["sprites"]["front_default"];
 
-    // Species info for description
     res = await fetch(pokemon["species"]["url"]);
     let speciesData = await res.json();
 
@@ -68,14 +63,11 @@ async function getPokemon(num) {
 }
 
 function displayPokemon(sectionId, id) {
-    // This function fills in a section of the landing page with a Pokémon
     document.querySelector(`#${sectionId} .pokemon-img`).src = pokedex[id].img;
 
-    // Clear previous types
     let typesDiv = document.querySelector(`#${sectionId} .pokemon-types`);
     typesDiv.innerHTML = "";
 
-    // Add type boxes
     pokedex[id].types.forEach(t => {
         let span = document.createElement("span");
         span.innerText = t.type.name.toUpperCase();
@@ -84,7 +76,6 @@ function displayPokemon(sectionId, id) {
         typesDiv.append(span);
     });
 
-    // Add description + name
     document.querySelector(`#${sectionId} .pokemon-name`).innerText =
         pokedex[id].name.toUpperCase();
 

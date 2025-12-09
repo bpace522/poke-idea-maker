@@ -13,7 +13,7 @@ function addToTeam(pokemonId) {
         return;
     }
 
-    team.push(pokemonId);  // allow duplicates
+    team.push(pokemonId);
     localStorage.setItem("team", JSON.stringify(team));
     alert("Pokémon added to your team!");
 }
@@ -24,7 +24,7 @@ window.onload = async function() {
     if (focusPokemon) {
         focusPokemon = parseInt(focusPokemon);
     }
-    // getPokemon(1);
+
     for (let i = 1; i <= pokemonCount; i++) {
         await getPokemon(i);
         //<div id="1" class="pokemon-name>BULBASAUR"</div>
@@ -64,23 +64,20 @@ async function getPokemon(num) {
 function updatePokemon() {
     document.getElementById("pokemon-img").src = pokedex[this.id]["img"];
 
-    //clear previous types
     let typesDiv = document.getElementById("pokemon-types");
     while (typesDiv.firstChild) {
         typesDiv.firstChild.remove();
     }
 
-    //udpate types
     let types = pokedex[this.id]["types"];
     for (let i = 0; i < types.length; i++) {
         let type = document.createElement("span");
         type.innerText = types[i]["type"]["name"].toUpperCase();
         type.classList.add("type-box");
-        type.classList.add(types[i]["type"]["name"]); //adds background color and font color
+        type.classList.add(types[i]["type"]["name"]);
         typesDiv.append(type);
     }
 
-    //update description
     document.getElementById("pokemon-description").innerText = pokedex[this.id]["desc"];
 
     document.querySelector(`.addToTeam`).onclick = () => addToTeam(this.id);
